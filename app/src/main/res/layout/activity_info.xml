@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="50dp">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:weightSum="2">
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:textSize="@dimen/font_size"
+                android:text="Status"/>
+            <TextView
+                android:id="@+id/info_status"
+                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:textSize="@dimen/font_size"
+                android:layout_weight="1" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorLightGray"
+            android:weightSum="2">
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:textSize="@dimen/font_size"
+                android:text="IP"/>
+            <TextView
+                android:id="@+id/info_ip"
+                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:textSize="@dimen/font_size"
+                android:textColor="@color/colorBlue"
+                android:layout_weight="1" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:weightSum="2">
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:textSize="@dimen/font_size"
+                android:text="MAC"/>
+            <TextView
+                android:id="@+id/info_mac"
+                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:textSize="@dimen/font_size"
+                android:layout_weight="1" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorLightGray"
+            android:weightSum="2">
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:textSize="@dimen/font_size"
+                android:text="SSID"/>
+            <TextView
+                android:id="@+id/info_ssid"
+                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:textSize="@dimen/font_size"
+                android:layout_weight="1" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:weightSum="2">
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:textSize="@dimen/font_size"
+                android:text="Ch/Fq"/>
+            <TextView
+                android:id="@+id/info_freq"
+                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:textSize="@dimen/font_size"
+                android:layout_weight="1" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorLightGray"
+            android:weightSum="2">
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:textSize="@dimen/font_size"
+                android:text="BSSID"/>
+            <TextView
+                android:id="@+id/info_bssid"
+                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:textSize="@dimen/font_size"
+                android:layout_weight="1" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:weightSum="2">
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:textSize="@dimen/font_size"
+                android:text="RSSI"/>
+            <TextView
+                android:id="@+id/info_rssi"
+                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:textSize="@dimen/font_size"
+                android:layout_weight="1" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorLightGray"
+            android:weightSum="2">
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:textSize="@dimen/font_size"
+                android:text="Link Speed"/>
+            <TextView
+                android:id="@+id/info_speed"
+                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:textSize="@dimen/font_size"
+                android:layout_weight="1" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:weightSum="2">
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:textSize="@dimen/font_size"
+                android:text="AP Capability"/>
+            <TextView
+                android:id="@+id/info_apcapability"
+                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:textSize="@dimen/font_size"
+                android:layout_weight="1" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorLightGray"
+            android:weightSum="2">
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:textSize="@dimen/font_size"
+                android:text="Gateway"/>
+            <TextView
+                android:id="@+id/info_gateway"
+                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:textSize="@dimen/font_size"
+                android:textColor="@color/colorBlue"
+                android:layout_weight="1" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:weightSum="2">
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:textSize="@dimen/font_size"
+                android:text="DNS Server"/>
+            <TextView
+                android:id="@+id/info_dns"
+                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:textSize="@dimen/font_size"
+                android:textColor="@color/colorBlue"
+                android:layout_weight="1" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorLightGray"
+            android:weightSum="2">
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:textSize="@dimen/font_size"
+                android:text="DHCP Server"/>
+            <TextView
+                android:id="@+id/info_dhcp"
+                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:textSize="@dimen/font_size"
+                android:textColor="@color/colorBlue"
+                android:layout_weight="1" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:weightSum="2">
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:textSize="@dimen/font_size"
+                android:text="DHCP Lease"/>
+            <TextView
+                android:id="@+id/info_dhcplease"
+                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:textSize="@dimen/font_size"
+                android:layout_weight="1" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorLightGray"
+            android:weightSum="2">
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:textSize="@dimen/font_size"
+                android:text="Internet Latency"/>
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:textSize="@dimen/font_size"
+                android:layout_weight="1" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:weightSum="2">
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:textSize="@dimen/font_size"
+                android:text="Ping Google"/>
+            <TextView
+                android:id="@+id/info_google"
+                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:textSize="@dimen/font_size"
+                android:layout_weight="1" />
+        </TableRow>
+
+        <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:weightSum="2">
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:textSize="@dimen/font_size"
+            android:text="Ping Facebook"/>
+        <TextView
+            android:id="@+id/info_facebook"
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:textSize="@dimen/font_size"
+            android:layout_weight="1" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:weightSum="2">
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:textSize="@dimen/font_size"
+                android:text="Ping Amazon"/>
+            <TextView
+                android:id="@+id/info_amazon"
+                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:textSize="@dimen/font_size"
+                android:layout_weight="1" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:weightSum="2">
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:textSize="@dimen/font_size"
+                android:text="Ping Apple"/>
+            <TextView
+                android:id="@+id/info_apple"
+                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:textSize="@dimen/font_size"
+                android:layout_weight="1" />
+        </TableRow>
+
+    </TableLayout>
+</LinearLayout>

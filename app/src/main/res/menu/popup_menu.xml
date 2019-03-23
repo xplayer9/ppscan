@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/check_rssi"
+        android:checkable="true"
+        android:title="Sort by RSSI" />
+    <item
+        android:id="@+id/check_ssid"
+        android:checkable="true"
+        android:title="Sort by SSID" />
+    <item
+        android:id="@+id/check_ch"
+        android:checkable="true"
+        android:title="Sort by Channel" />
+</menu>

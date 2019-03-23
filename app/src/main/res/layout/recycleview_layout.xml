@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+android:orientation="horizontal"
+android:layout_width="match_parent"
+android:background="@color/white"
+android:layout_height="90dp">
+
+<TableLayout
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+    <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:weightSum="8">
+
+        <ImageView
+            android:id="@+id/imageview_wifilock"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:src="@mipmap/wifi_lock_30dp" />
+
+        <LinearLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="7">
+
+            <TextView
+                android:id="@+id/textView_ssid"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:textSize="22dp"/>
+
+            <TableLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:weightSum="4">
+                    <TextView
+                        android:id="@+id/textView_ch"
+                        android:layout_height="wrap_content"
+                        android:layout_width="0dp"
+                        android:layout_weight="3"
+                        android:textSize="15dp"/>
+
+                    <TextView
+                        android:id="@+id/textView_dbm"
+                        android:layout_height="wrap_content"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:textSize="18dp"/>
+                </TableRow>
+            </TableLayout>
+
+            <ProgressBar
+                android:id="@+id/signal_bar"
+                android:layout_height="wrap_content"
+                android:layout_width="fill_parent"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:max="100"/>
+
+        </LinearLayout>
+    </TableRow>
+</TableLayout>
+</LinearLayout>

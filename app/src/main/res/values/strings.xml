@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">WiFi Viewer</string>
+    <string name="container">container</string>
+    <string name="navigationView">navigationView</string>
+    <string name="navigation_scan">navigation_scan</string>
+    <string name="navigation_info">navigation_info</string>
+    <string name="navigation_network">navigation_network</string>
+    <string name="recycler_view">recycler_view</string>
+    <string name="info_text">info_text</string>
+    <string name="imageview_wifilock">imageview_wifilock</string>
+    <string name="textView_ssid">textView_ssid</string>
+    <string name="textView_ch">textView_ch</string>
+    <string name="signal_bar">signal_bar</string>
+    <string name="textView_dbm">textView_dbm</string>
+    <string name="toolbar">toolbar</string>
+
+    <string-array name="spinner_array">
+        <item>RSSI</item>
+        <item>Channel</item>
+        <item>SSID</item>
+    </string-array>
+</resources>
