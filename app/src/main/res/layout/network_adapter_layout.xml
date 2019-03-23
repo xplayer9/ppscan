@@ -20,7 +20,7 @@
                 android:layout_height="fill_parent"
                 android:layout_weight="1"
                 android:layout_gravity="center"
-                android:src="@mipmap/device_30dp" />
+                android:src="@drawable/device_30dp" />
 
             <LinearLayout
                 xmlns:android="http://schemas.android.com/apk/res/android"
@@ -33,20 +33,20 @@
                     android:id="@+id/peer_hostname"
                     android:layout_height="wrap_content"
                     android:layout_width="wrap_content"
-                    android:textSize="18dp"/>
+                    android:textSize="18sp"/>
 
                 <TextView
                     android:id="@+id/peer_ip"
                     android:layout_height="wrap_content"
                     android:layout_width="wrap_content"
                     android:textColor="@color/colorBlue"
-                    android:textSize="18dp"/>
+                    android:textSize="18sp"/>
 
                 <TextView
                     android:id="@+id/peer_mac"
                     android:layout_height="wrap_content"
                     android:layout_width="wrap_content"
-                    android:textSize="18dp"/>
+                    android:textSize="18sp"/>
 
             </LinearLayout>
         </TableRow>

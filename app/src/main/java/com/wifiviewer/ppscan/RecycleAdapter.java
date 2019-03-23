@@ -13,18 +13,18 @@ import java.util.ArrayList;
 
 public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.ViewHolder> {
 
-    public ArrayList<ScanResult> scanList;
+    private ArrayList<ScanResult> scanList;
     // Provide a reference to the views for each data item
     // Complex data items may need more than one view per item, and
     // you provide access to all the views for a data item in a view holder
-    public static class ViewHolder extends RecyclerView.ViewHolder {
+    static class ViewHolder extends RecyclerView.ViewHolder {
         // each data item is just a string in this case
-        public ImageView imageView_wifilock;
-        public TextView textView_ssid;
-        public TextView textView_ch;
-        public TextView textView_dbm;
-        public ProgressBar signal_bar;
-        public ViewHolder(View v) {
+        ImageView imageView_wifilock;
+        TextView textView_ssid;
+        TextView textView_ch;
+        TextView textView_dbm;
+        ProgressBar signal_bar;
+        ViewHolder(View v) {
             super(v);
             imageView_wifilock = v.findViewById(R.id.imageview_wifilock);
             textView_ssid = v.findViewById(R.id.textView_ssid);
@@ -35,21 +35,20 @@ public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.ViewHold
     }
 
     // Provide a suitable constructor (depends on the kind of dataset)
-    public RecycleAdapter(ArrayList<ScanResult> ll) {
+    RecycleAdapter(ArrayList<ScanResult> ll) {
         scanList = new ArrayList<>(ll);
     }
 
-    public void updateScanResult(ArrayList<ScanResult> ll){
+    void updateScanResult(ArrayList<ScanResult> ll){
         scanList = new ArrayList<>(ll);
     }
     // Create new views (invoked by the layout manager)
     @Override
     public RecycleAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         // create a new view
-        View v = (View) LayoutInflater.from(parent.getContext())
+        View v = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.recycleview_layout, parent, false);
-        ViewHolder vh = new ViewHolder(v);
-        return vh;
+        return new ViewHolder(v);
     }
 
     // Replace the contents of a view (invoked by the layout manager)
@@ -59,9 +58,9 @@ public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.ViewHold
         //Check Security
         String wpa = scanList.get(position).capabilities;
         if(!wpa.contains("WPA"))
-            holder.imageView_wifilock.setImageResource(R.mipmap.wifi_black_30dp);
+            holder.imageView_wifilock.setImageResource(R.drawable.wifi_black_30dp);
         else
-            holder.imageView_wifilock.setImageResource(R.mipmap.wifi_lock_30dp);
+            holder.imageView_wifilock.setImageResource(R.drawable.wifi_lock_30dp);
 
         //Check SSID
         holder.textView_ssid.setText(scanList.get(position).SSID);
@@ -83,7 +82,7 @@ public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.ViewHold
             holder.signal_bar.setProgress(rssi+140);
             holder.textView_dbm.setTextColor(Color.parseColor("#3F8341"));
         }
-        else if(rssi < -45 && rssi > -66) {
+        else if(rssi > -66) {
             //Color Orange
             holder.signal_bar.getProgressDrawable().setColorFilter(
                     Color.parseColor("#FF9800"), android.graphics.PorterDuff.Mode.SRC_IN);

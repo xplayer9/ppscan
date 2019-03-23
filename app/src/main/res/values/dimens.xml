@@ -3,7 +3,7 @@
     <dimen name="textview_height">25dp</dimen>
     <dimen name="textview_width">150dp</dimen>
     <dimen name="ball_radius">30dp</dimen>
-    <dimen name="font_size">16dp</dimen>
+    <dimen name="font_size">16sp</dimen>
     <dimen name="design_bottom_navigation_text_size" tools:override="true">13sp</dimen>
     <dimen name="design_bottom_navigation_active_text_size" tools:override="true">17sp</dimen>
 </resources>
