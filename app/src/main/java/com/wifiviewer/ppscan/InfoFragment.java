@@ -33,15 +33,15 @@ public class InfoFragment extends Fragment {
     private void updateInfo(View v){
 
         //check wifi status first
-        TextView tmp = (TextView)v.findViewById(R.id.info_status);
+        TextView tmp = v.findViewById(R.id.info_status);
         if(!WifiHandler.isWifiConnected()) {
-            tmp.setText("Disconnect");
+            tmp.setText(R.string.info_disconnect);
             tmp.setTextColor(Color.RED);
-            Toast.makeText(getContext(), "WiFi Disconnected", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getContext(), R.string.info_disconnect, Toast.LENGTH_SHORT).show();
             return;
         }
         else {
-            tmp.setText("Connected");
+            tmp.setText(R.string.info_connected);
             tmp.setTextColor(Color.GREEN);
             //update device ip
             WifiHandler.deviceIP = WifiHandler.formatIP(WifiHandler.wifiM.getConnectionInfo().getIpAddress());
@@ -50,7 +50,7 @@ public class InfoFragment extends Fragment {
         WifiInfo wifiInfo = WifiHandler.wifiM.getConnectionInfo();
 
         //ssid
-        tmp = (TextView)v.findViewById(R.id.info_ssid);
+        tmp = v.findViewById(R.id.info_ssid);
         String ssid = "";
         if(!wifiInfo.getHiddenSSID())
             ssid = wifiInfo.getSSID().substring(1,wifiInfo.getSSID().length()-1);
@@ -62,32 +62,34 @@ public class InfoFragment extends Fragment {
         }
 
         //ch/freq
-        tmp = (TextView)v.findViewById(R.id.info_freq);
+        tmp = v.findViewById(R.id.info_freq);
         int freq = wifiInfo.getFrequency();
-        tmp.setText("Ch " + WifiHandler.channelMap.get(freq) + " / " + freq + "MHz");
+        tmp.setText("Ch" + WifiHandler.channelMap.get(freq)
+                    + " / " +
+                    freq + "MHz");
 
         //bssid
-        tmp = (TextView)v.findViewById(R.id.info_bssid);
+        tmp = v.findViewById(R.id.info_bssid);
         tmp.setText(wifiInfo.getBSSID());
 
         //device ip
-        tmp = (TextView)v.findViewById(R.id.info_ip);
+        tmp = v.findViewById(R.id.info_ip);
         tmp.setText(WifiHandler.deviceIP);
 
         //mac
-        tmp = (TextView)v.findViewById(R.id.info_mac);
+        tmp = v.findViewById(R.id.info_mac);
         tmp.setText(WifiHandler.getMacAddr());
 
         //speed
-        tmp = (TextView)v.findViewById(R.id.info_speed);
+        tmp = v.findViewById(R.id.info_speed);
         tmp.setText(wifiInfo.getLinkSpeed() + " Mbps");
 
         //rssi
-        tmp = (TextView)v.findViewById(R.id.info_rssi);
+        tmp = v.findViewById(R.id.info_rssi);
         tmp.setText(wifiInfo.getRssi() + " dBm");
 
         //ap capability
-        tmp = (TextView)v.findViewById(R.id.info_apcapability);
+        tmp = v.findViewById(R.id.info_apcapability);
         for(int i=0; i<WifiHandler.scanList.size(); i++){
             if(WifiHandler.scanList.get(i).SSID.equals(ssid)){
                 tmp.setText(WifiHandler.scanList.get(i).capabilities);
@@ -99,24 +101,24 @@ public class InfoFragment extends Fragment {
         DhcpInfo dhcpinfo = WifiHandler.wifiM.getDhcpInfo();
 
         //Gateway
-        tmp = (TextView)v.findViewById(R.id.info_gateway);
+        tmp = v.findViewById(R.id.info_gateway);
         tmp.setText(WifiHandler.formatIP(dhcpinfo.gateway));
 
         //dns
-        tmp = (TextView)v.findViewById(R.id.info_dns);
+        tmp = v.findViewById(R.id.info_dns);
         tmp.setText(WifiHandler.formatIP(dhcpinfo.dns1));
 
         //dhcp server
-        tmp = (TextView)v.findViewById(R.id.info_dhcp);
+        tmp = v.findViewById(R.id.info_dhcp);
         tmp.setText(WifiHandler.formatIP(dhcpinfo.serverAddress));
 
         //dhcp lease
-        tmp = (TextView)v.findViewById(R.id.info_dhcplease);
+        tmp = v.findViewById(R.id.info_dhcplease);
         tmp.setText(dhcpinfo.leaseDuration + " secs");
 
         //Ping command, use Handler.post thread
             //google
-            final TextView googleText = (TextView)v.findViewById(R.id.info_google);
+            final TextView googleText = v.findViewById(R.id.info_google);
             new Handler(Looper.getMainLooper()).post(new Runnable(){
                 @Override
                 public void run() {
@@ -124,7 +126,7 @@ public class InfoFragment extends Fragment {
                 }
             });
             //facebook
-            final TextView facebookText = (TextView)v.findViewById(R.id.info_facebook);
+            final TextView facebookText = v.findViewById(R.id.info_facebook);
             new Handler(Looper.getMainLooper()).post(new Runnable(){
                 @Override
                 public void run() {
@@ -133,7 +135,7 @@ public class InfoFragment extends Fragment {
             });
 
             //amazon
-            final TextView amazonText = (TextView)v.findViewById(R.id.info_amazon);
+            final TextView amazonText = v.findViewById(R.id.info_amazon);
             new Handler(Looper.getMainLooper()).post(new Runnable(){
                 @Override
                 public void run() {
@@ -142,7 +144,7 @@ public class InfoFragment extends Fragment {
             });
 
             //apple
-            final TextView appleText = (TextView)v.findViewById(R.id.info_apple);
+            final TextView appleText = v.findViewById(R.id.info_apple);
             new Handler(Looper.getMainLooper()).post(new Runnable(){
                 @Override
                 public void run() {
